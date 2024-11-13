@@ -4,13 +4,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5.0.0-beta
       - uses: matlab-actions/setup-matlab@v2
       - uses: matlab-actions/run-tests@v2
         with:
           source-folder: source
           code-coverage-cobertura: coverage.xml
-      - uses: codecov/codecov-action@v4
+      - uses: codecov/codecov-action@v5.0.0-beta
         with:
           file: coverage.xml
           token: ${{ secrets.CODECOV_TOKEN }}
